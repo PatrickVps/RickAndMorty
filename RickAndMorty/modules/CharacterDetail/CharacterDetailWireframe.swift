@@ -22,7 +22,7 @@ final class CharacterDetailWireframe: BaseWireframe<CharacterDetailViewControlle
         let moduleViewController = storyboard.instantiateViewController(withIdentifier: "CharacterDetailViewController") as! CharacterDetailViewController
         super.init(viewController: moduleViewController)
 
-        let interactor = CharacterDetailInteractor(services: ApiService())
+        let interactor = CharacterDetailInteractor(services: ApiService.getInstance())
         let presenter = CharacterDetailPresenter(character: character, view: moduleViewController, interactor: interactor, wireframe: self)
         moduleViewController.presenter = presenter
     }

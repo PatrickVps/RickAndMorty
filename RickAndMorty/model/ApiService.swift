@@ -12,6 +12,15 @@ import RxCocoa
 
 class ApiService: BaseService, APIServicesInterfaces {
     
+    private static var instance : ApiService? = nil
+    
+    static func getInstance() -> ApiService{
+        if(self.instance == nil){
+            self.instance = ApiService()
+        }
+        return self.instance!
+    }
+    
     func fetchEpisodes() -> Driver<[Episode]> {
         let components = URLComponents(string: Constants.API_EPISODES_URL)!
         let urlRequest = URLRequest(url: components.url!)

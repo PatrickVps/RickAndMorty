@@ -10,6 +10,8 @@ import RxSwift
 import RxCocoa
 
 protocol APIServicesInterfaces {
+    static func getInstance() -> ApiService
+    
     func fetchEpisodes() -> Driver<[Episode]>
     func fetchCharacter(_ url : String) -> Driver<Character>
     func fetchEpisode(_ url : String) -> Driver<Episode>

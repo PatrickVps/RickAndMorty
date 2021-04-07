@@ -22,7 +22,7 @@ final class EpisodesWireframe: BaseWireframe<EpisodesViewController> {
         let moduleViewController = storyboard.instantiateViewController(withIdentifier: "EpisodesViewController") as! EpisodesViewController
         super.init(viewController: moduleViewController )
 
-        let interactor = EpisodesInteractor(services: ApiService())
+        let interactor = EpisodesInteractor(services: ApiService.getInstance())
         let presenter = EpisodesPresenter(view: moduleViewController as EpisodesViewInterface, interactor: interactor, wireframe: self)
         moduleViewController.presenter = presenter
     }

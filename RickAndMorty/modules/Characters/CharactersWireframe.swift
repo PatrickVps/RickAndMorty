@@ -22,7 +22,7 @@ final class CharactersWireframe: BaseWireframe<CharactersViewController> {
         let moduleViewController = storyboard.instantiateViewController(withIdentifier: "CharactersViewController") as! CharactersViewController
         super.init(viewController: moduleViewController)
 
-        let interactor = CharactersInteractor(services: ApiService())
+        let interactor = CharactersInteractor(services: ApiService.getInstance())
         let presenter = CharactersPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
         moduleViewController.presenter = presenter
     }

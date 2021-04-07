@@ -22,7 +22,7 @@ final class EpisodeDetailWireframe: BaseWireframe<EpisodeDetailViewController> {
         let moduleViewController = storyboard.instantiateViewController(withIdentifier: "EpisodeDetailViewController") as! EpisodeDetailViewController
         super.init(viewController: moduleViewController)
 
-        let interactor = EpisodeDetailInteractor(services : ApiService())
+        let interactor = EpisodeDetailInteractor(services : ApiService.getInstance())
         let presenter = EpisodeDetailPresenter(episode : episode, view: moduleViewController, interactor: interactor, wireframe: self)
         moduleViewController.presenter = presenter
     }
